@@ -8,7 +8,7 @@ Methodology
 - Privilege Escalation 
 
 ## Steps
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Enumeration/Scanning with Nmap - perform a quick scan for open ports followed by a full port scan
 
 Web Footprinting - check any identified web ports for running web applications, and any hidden files/directories. Some useful tools for this phase include whatweb and Gobuster
